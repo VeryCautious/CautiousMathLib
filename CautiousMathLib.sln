@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CautiousMathLib", "CautiousMathLib\CautiousMathLib.vbproj", "{1DC3A65A-48F7-4152-9AEF-EFE8726E6537}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "XUnitTests", "XUnitTests\XUnitTests.vbproj", "{8946D044-675E-4288-822A-11201256781B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{1DC3A65A-48F7-4152-9AEF-EFE8726E6537}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1DC3A65A-48F7-4152-9AEF-EFE8726E6537}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1DC3A65A-48F7-4152-9AEF-EFE8726E6537}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8946D044-675E-4288-822A-11201256781B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8946D044-675E-4288-822A-11201256781B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8946D044-675E-4288-822A-11201256781B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8946D044-675E-4288-822A-11201256781B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,6 @@
-﻿Public Class Vec3
+﻿Imports System.Runtime.CompilerServices
+
+Public Class Vec3
     Public Property X As Double
     Public Property Y As Double
     Public Property Z As Double
@@ -48,7 +50,7 @@
     End Sub
 
     ''' <summary>
-    ''' Creates a new vector with (0,0)
+    ''' Creates a new vector with (0,0,0)
     ''' </summary>
     Sub New()
         Me.New(0, 0, 0)
@@ -169,6 +171,27 @@
     ''' <returns></returns>
     Public Function Reflect(Normal As Vec3) As Vec3
         Return 2.0 * (Normal * Me) * Normal - Me
+    End Function
+
+    Public Shared Function GetE1() As Vec3
+        Return New Vec3(1, 0, 0)
+    End Function
+
+    Public Shared Function GetE2() As Vec3
+        Return New Vec3(0, 1, 0)
+    End Function
+
+    Public Shared Function GetE3() As Vec3
+        Return New Vec3(0, 0, 1)
+    End Function
+
+    Public Overrides Function Equals(obj As Object) As Boolean
+        If obj Is Nothing OrElse Not Me.GetType().Equals(obj.GetType()) Then
+            Return False
+        End If
+
+        Dim vec2 = CType(obj, Vec3)
+        Return vec2.X = Me.X AndAlso vec2.Y = Me.Y AndAlso vec2.Z = Me.Z
     End Function
 
 End Class

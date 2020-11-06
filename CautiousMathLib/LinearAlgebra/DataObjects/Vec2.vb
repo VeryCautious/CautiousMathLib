@@ -161,4 +161,13 @@
         Return 2.0 * (Normal * Me) * Normal - Me
     End Function
 
+    Public Overrides Function Equals(obj As Object) As Boolean
+        If obj Is Nothing OrElse Not Me.GetType().Equals(obj.GetType()) Then
+            Return False
+        End If
+
+        Dim vec2 = CType(obj, Vec2)
+        Return vec2.X = Me.X AndAlso vec2.Y = Me.Y
+    End Function
+
 End Class
