@@ -181,6 +181,15 @@
     End Operator
 
     ''' <summary>
+    ''' Gets the transposed matrix of this matrix
+    ''' For an orthogonal matrix this is also the inverse
+    ''' </summary>
+    ''' <returns></returns>
+    Public Function GetTranspose() As Mat3
+        Return New Mat3(Me.Column1, Me.Column2, Me.Column3)
+    End Function
+
+    ''' <summary>
     ''' Gets a matrix, that translates a vec2 by (dy,dy)
     ''' </summary>
     ''' <param name="dX"></param>
