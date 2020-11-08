@@ -173,14 +173,26 @@ Public Class Vec3
         Return 2.0 * (Normal * Me) * Normal - Me
     End Function
 
+    ''' <summary>
+    ''' Gets a vector with (1,0,0)
+    ''' </summary>
+    ''' <returns></returns>
     Public Shared Function GetE1() As Vec3
         Return New Vec3(1, 0, 0)
     End Function
 
+    ''' <summary>
+    ''' Gets a vector with (0,1,0)
+    ''' </summary>
+    ''' <returns></returns>
     Public Shared Function GetE2() As Vec3
         Return New Vec3(0, 1, 0)
     End Function
 
+    ''' <summary>
+    ''' Gets a vector with (0,0,1)
+    ''' </summary>
+    ''' <returns></returns>
     Public Shared Function GetE3() As Vec3
         Return New Vec3(0, 0, 1)
     End Function
