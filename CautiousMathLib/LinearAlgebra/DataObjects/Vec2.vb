@@ -1,4 +1,5 @@
-﻿Public Class Vec2
+﻿<Serializable>
+Public Class Vec2
 
     Public Property X As Double
     Public Property Y As Double

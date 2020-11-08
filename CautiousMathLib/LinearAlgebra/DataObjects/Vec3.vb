@@ -1,5 +1,4 @@
-﻿Imports System.Runtime.CompilerServices
-
+﻿<Serializable>
 Public Class Vec3
     Public Property X As Double
     Public Property Y As Double

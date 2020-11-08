@@ -1,4 +1,5 @@
-﻿Public Class Mat3
+﻿<Serializable>
+Public Class Mat3
 
     Public Property Row1 As Vec3
     Public Property Row2 As Vec3
