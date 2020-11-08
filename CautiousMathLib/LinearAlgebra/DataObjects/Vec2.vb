@@ -161,6 +161,23 @@
         Return 2.0 * (Normal * Me) * Normal - Me
     End Function
 
+    ''' <summary>
+    ''' Gets a vector orthogonal to this one
+    ''' </summary>
+    ''' <returns>(Y , -X)</returns>
+    Public Function GetOrthogonalVector() As Vec2
+        Return New Vec2(Y, -X)
+    End Function
+
+    ''' <summary>
+    ''' Gets the portion of the vector that points in a direction
+    ''' </summary>
+    ''' <param name="Direction">A normalized vector that represents a direction</param>
+    ''' <returns>(Direction * Me) * Direction</returns>
+    Public Function GetPartInDirection(Direction As Vec2) As Vec2
+        Return (Direction * Me) * Direction
+    End Function
+
     Public Overrides Function Equals(obj As Object) As Boolean
         If obj Is Nothing OrElse Not Me.GetType().Equals(obj.GetType()) Then
             Return False
