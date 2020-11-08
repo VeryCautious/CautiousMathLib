@@ -1,6 +1,4 @@
-﻿Imports System.IO
-
-Public Class Vec2
+﻿Public Class Vec2
 
     Public Property X As Double
     Public Property Y As Double
