@@ -49,7 +49,6 @@ Namespace XUnitTests
             Assert.Equal(2 * 15, 2 * (v2 * v3))
         End Sub
 
-
     End Class
 End Namespace
 
