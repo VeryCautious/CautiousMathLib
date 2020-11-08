@@ -197,6 +197,42 @@ Public Class Vec3
         Return New Vec3(0, 0, 1)
     End Function
 
+    ''' <summary>
+    ''' Gets a vector orthogonal to this one
+    ''' </summary>
+    ''' <returns>(Y , -X)</returns>
+    Public Function GetOrthogonalVector() As Vec2
+        Return New Vec2(Y, -X)
+    End Function
+
+    ''' <summary>
+    ''' Gets the portion of the vector that points in a direction
+    ''' </summary>
+    ''' <param name="Direction">A normalized vector that represents a direction</param>
+    ''' <returns>(Direction * Me) * Direction</returns>
+    Public Function GetPartInDirection(Direction As Vec3) As Vec3
+        Return (Direction * Me) * Direction
+    End Function
+
+    ''' <summary>
+    ''' Gets a vector from one point to another
+    ''' </summary>
+    ''' <param name="FromVec">Starting point</param>
+    ''' <param name="ToVec">End point</param>
+    ''' <returns></returns>
+    Public Shared Function GetVectorFromTo(FromVec As Vec3, ToVec As Vec3) As Vec3
+        Return ToVec - FromVec
+    End Function
+
+    ''' <summary>
+    ''' Gets the distance from this point to another
+    ''' </summary>
+    ''' <param name="OtherVector"></param>
+    ''' <returns></returns>
+    Public Function DistanceTo(OtherVector As Vec3) As Double
+        Return (Me - OtherVector).Length
+    End Function
+
     Public Overrides Function Equals(obj As Object) As Boolean
         If obj Is Nothing OrElse Not Me.GetType().Equals(obj.GetType()) Then
             Return False

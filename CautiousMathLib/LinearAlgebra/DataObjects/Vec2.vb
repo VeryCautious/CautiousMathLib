@@ -1,4 +1,6 @@
-﻿Public Class Vec2
+﻿Imports System.IO
+
+Public Class Vec2
 
     Public Property X As Double
     Public Property Y As Double
@@ -162,6 +164,22 @@
     End Function
 
     ''' <summary>
+    ''' Gets a vector with (1,0)
+    ''' </summary>
+    ''' <returns></returns>
+    Public Shared Function GetE1() As Vec2
+        Return New Vec2(1, 0)
+    End Function
+
+    ''' <summary>
+    ''' Gets a vector with (0,1)
+    ''' </summary>
+    ''' <returns></returns>
+    Public Shared Function GetE2() As Vec2
+        Return New Vec2(0, 1)
+    End Function
+
+    ''' <summary>
     ''' Gets a vector orthogonal to this one
     ''' </summary>
     ''' <returns>(Y , -X)</returns>
@@ -176,6 +194,25 @@
     ''' <returns>(Direction * Me) * Direction</returns>
     Public Function GetPartInDirection(Direction As Vec2) As Vec2
         Return (Direction * Me) * Direction
+    End Function
+
+    ''' <summary>
+    ''' Gets a vector from one point to another
+    ''' </summary>
+    ''' <param name="FromVec">Starting point</param>
+    ''' <param name="ToVec">End point</param>
+    ''' <returns></returns>
+    Public Shared Function GetVectorFromTo(FromVec As Vec2, ToVec As Vec2) As Vec2
+        Return ToVec - FromVec
+    End Function
+
+    ''' <summary>
+    ''' Gets the distance from this point to another
+    ''' </summary>
+    ''' <param name="OtherVector"></param>
+    ''' <returns></returns>
+    Public Function DistanceTo(OtherVector As Vec2) As Double
+        Return (Me - OtherVector).Length
     End Function
 
     Public Overrides Function Equals(obj As Object) As Boolean
