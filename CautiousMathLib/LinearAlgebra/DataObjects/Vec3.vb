@@ -112,6 +112,14 @@ Public Class Vec3
     End Function
 
     ''' <summary>
+    ''' Converts the vector to a System.Drawing.Color
+    ''' </summary>
+    ''' <returns></returns>
+    Public Function ToColor() As System.Drawing.Color
+        Return System.Drawing.Color.FromArgb(CInt(X), CInt(Y), CInt(Z))
+    End Function
+
+    ''' <summary>
     ''' Component wise addition
     ''' </summary>
     ''' <param name="vec1"></param>

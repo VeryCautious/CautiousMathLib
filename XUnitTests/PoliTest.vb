@@ -19,7 +19,6 @@ Namespace XUnitTests
             Assert.Equal(2, ap.GetValueAt(10))
             Assert.Equal(5, ap.GetValueAt(200))
 
-
             Dim ap2 = StandardPolynomial.GetCubicInterpolatingPolynomial(New Vec2(10, 15), New Vec2(40, 45), 1, 2)
             Dim dp2 = ap2.GetDirivitive
 

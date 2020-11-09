@@ -104,6 +104,11 @@
         Return New StandardPolynomial(coeff)
     End Operator
 
+    ''' <summary>
+    ''' This function can only test if two StandartPolynomials are the same. Other Polynomials will return false!
+    ''' </summary>
+    ''' <param name="obj"></param>
+    ''' <returns></returns>
     Public Overrides Function Equals(obj As Object) As Boolean
         If obj Is Nothing OrElse Not Me.GetType().Equals(obj.GetType()) Then
             Return False
