@@ -33,9 +33,12 @@ Namespace XUnitTests
         <Fact>
         Sub TestOperators()
             Dim p1 As New StandardPolynomial({1, 2, 3, 4})
-            Dim p2 As New StandardPolynomial({2, 5, 7, 3})
+            Dim p2 As New StandardPolynomial({2, 5, 7, 3, 8})
 
-            Assert.Equal(New StandardPolynomial({3, 7, 10, 7}), p1 + p2)
+            Assert.Equal(New StandardPolynomial({3, 7, 10, 7, 8}), p1 + p2)
+            Assert.Equal(New StandardPolynomial({-1, -3, -4, 1, -8}), p1 - p2)
+            Assert.Equal(New StandardPolynomial({1, 3, 4, -1, 8}), p2 - p1)
+            Assert.Equal(New StandardPolynomial({0}), p2 - p2)
             Assert.Equal(New StandardPolynomial({5, 10, 15, 20}), 5 * p1)
         End Sub
 

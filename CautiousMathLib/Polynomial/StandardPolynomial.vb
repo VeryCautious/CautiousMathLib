@@ -90,6 +90,10 @@
         Return New StandardPolynomial(coeff)
     End Operator
 
+    Public Shared Operator -(Poly1 As StandardPolynomial, Poly2 As StandardPolynomial) As StandardPolynomial
+        Return Poly1 + (-1 * Poly2)
+    End Operator
+
     Public Shared Operator *(Scalar As Double, Poly As StandardPolynomial) As StandardPolynomial
         Dim coeff(0 To Poly.Degree) As Double
 
