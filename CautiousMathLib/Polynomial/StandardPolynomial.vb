@@ -24,13 +24,25 @@
     Public Shared Function GetCubicInterpolatingPolynomial(StartY As Double, EndY As Double, StartSlope As Double, EndSlope As Double) As StandardPolynomial
         Dim d = StartY
         Dim c = StartSlope
-        Dim b = -(EndSlope + 2 * StartSlope + 3 * StartY - 3 * EndY)
-        Dim a = (EndY - (StartY + EndSlope)) - b
+        Dim b = 3 * (EndY - StartY) - EndSlope - 2 * StartSlope
+        Dim a = (StartSlope + EndSlope) - 2 * (EndY - StartY)
 
         Return New StandardPolynomial({d, c, b, a})
     End Function
 
-    Public Function GetDirivitive() As StandardPolynomial
+    ''' <summary>
+    ''' Gets a cubic polinomial that interpolates two point
+    ''' </summary>
+    ''' <param name="StartP">p(StartP.X)=StartP.Y</param>
+    ''' <param name="EndP">p(EndP.X)=EndP.Y</param>
+    ''' <param name="StartSlope">p'(StartP.X)=StartSlope</param>
+    ''' <param name="EndSlope">p'(EndP.X)=EndSlope</param>
+    ''' <returns></returns>
+    Public Shared Function GetCubicInterpolatingPolynomial(StartP As Vec2, EndP As Vec2, StartSlope As Double, EndSlope As Double) As Polynomial
+        Return New PolyAffineTransform(GetCubicInterpolatingPolynomial(StartP.Y, EndP.Y, StartSlope, EndSlope), StartP.X, EndP.X)
+    End Function
+
+    Public Overrides Function GetDirivitive() As Polynomial
         Dim NewCoefficients(0 To Coefficents.Length - 2) As Double
 
         For I As Integer = 1 To Coefficents.Length - 1

@@ -5,7 +5,6 @@ Namespace XUnitTests
     Public Class PoliTest
         <Fact>
         Sub TestPoliInterpol()
-
             Dim p = StandardPolynomial.GetCubicInterpolatingPolynomial(2, 5, 0, 0)
             Dim dp = p.GetDirivitive
 
@@ -14,6 +13,21 @@ Namespace XUnitTests
 
             Assert.Equal(0, dp.GetValueAt(0))
             Assert.Equal(0, dp.GetValueAt(1))
+
+            Dim ap As New PolyAffineTransform(p, 10, 200)
+
+            Assert.Equal(2, ap.GetValueAt(10))
+            Assert.Equal(5, ap.GetValueAt(200))
+
+
+            Dim ap2 = StandardPolynomial.GetCubicInterpolatingPolynomial(New Vec2(10, 15), New Vec2(40, 45), 1, 2)
+            Dim dp2 = ap2.GetDirivitive
+
+            Assert.Equal(15, ap2.GetValueAt(10))
+            Assert.Equal(45, ap2.GetValueAt(40))
+
+            Assert.Equal(1, dp2.GetValueAt(10))
+            Assert.Equal(2, dp2.GetValueAt(40))
         End Sub
 
         <Fact>

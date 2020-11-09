@@ -3,8 +3,7 @@ Imports CautiousMathLib
 
 Module Program
     Sub Main(args As String())
-        Dim p = StandardPolynomial.GetCubicInterpolatingPolynomial(2, 5, 0, 0)
-        Dim dp = p.GetDirivitive
+        Dim ap2 = StandardPolynomial.GetCubicInterpolatingPolynomial(New Vec2(10, 15), New Vec2(40, 45), 1, 2)
         Stop
     End Sub
 End Module
